@@ -1,0 +1,31 @@
+# Binaries
+producer/producer
+consumer/consumer
+api/api
+
+# Go
+*.sum
+vendor/
+*.test
+*.out
+
+# Docker
+.docker/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+*.pem
+*.key
+kubeconfig
+
+# Grafana data
+monitoring/grafana/data/

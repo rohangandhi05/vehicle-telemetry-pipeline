@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: telemetry
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: telemetry-config
+  namespace: telemetry
+data:
+  KAFKA_BROKER: "kafka-service:9092"
+  KAFKA_TOPIC: "vehicle-telemetry"
+  KAFKA_GROUP_ID: "telemetry-consumer-group"
+  REDIS_ADDR: "redis-service:6379"
+  METRICS_PORT: "2112"
+  PORT: "8080"
+  GIN_MODE: "release"
