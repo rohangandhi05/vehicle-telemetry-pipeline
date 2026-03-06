@@ -1,4 +1,4 @@
-module github.com/yourname/vehicle-telemetry/consumer
+module github.com/yourname/tesla-telemetry/consumer
 
 go 1.22
 

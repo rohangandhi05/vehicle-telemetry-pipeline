@@ -105,12 +105,12 @@ func main() {
 	vehicles := make([]*VehicleState, numVehicles)
 	for i := 0; i < numVehicles; i++ {
 		vehicles[i] = &VehicleState{
-			ID:      fmt.Sprintf("RIV-%04d", i+1),
-			Battery: 60 + rand.Float64()*40,
+			ID:       fmt.Sprintf("TSL-%04d", i+1),
+			Battery:  60 + rand.Float64()*40,
 			Odometer: rand.Float64() * 50000,
-			Lat:     37.3382 + rand.Float64()*0.1,
-			Lon:     -121.8863 + rand.Float64()*0.1,
-			Speed:   rand.Float64() * 60,
+			Lat:      37.3382 + rand.Float64()*0.1,
+			Lon:      -121.8863 + rand.Float64()*0.1,
+			Speed:    rand.Float64() * 60,
 		}
 	}
 

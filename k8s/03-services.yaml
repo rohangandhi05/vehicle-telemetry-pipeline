@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: producer
-          image: yourname/telemetry-producer:latest
+          image: yourname/tesla-telemetry-producer:latest
           envFrom:
             - configMapRef:
                 name: telemetry-config
@@ -55,7 +55,7 @@ spec:
     spec:
       containers:
         - name: consumer
-          image: yourname/telemetry-consumer:latest
+          image: yourname/tesla-telemetry-consumer:latest
           ports:
             - containerPort: 2112
               name: metrics
@@ -121,7 +121,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: yourname/telemetry-api:latest
+          image: yourname/tesla-telemetry-api:latest
           ports:
             - containerPort: 8080
           envFrom:

@@ -1,4 +1,4 @@
-# 🚗 Real-Time Vehicle Telemetry Pipeline
+# ⚡ Real-Time Tesla Vehicle Telemetry Pipeline
 
 A distributed, event-driven system that ingests, processes, and visualizes real-time vehicle sensor data. Built with Go, Apache Kafka, Redis, Docker, Kubernetes, and Prometheus/Grafana.
 
@@ -42,8 +42,8 @@ A distributed, event-driven system that ingests, processes, and visualizes real-
 
 ```bash
 # Clone and start everything
-git clone https://github.com/yourname/vehicle-telemetry-pipeline
-cd vehicle-telemetry-pipeline
+git clone https://github.com/yourname/tesla-telemetry-pipeline
+cd tesla-telemetry-pipeline
 docker compose up --build
 ```
 
@@ -67,7 +67,7 @@ GET /api/v1/vehicles
   "count": 10,
   "vehicles": [
     {
-      "vehicle_id": "RIV-0001",
+      "vehicle_id": "TSL-0001",
       "last_seen": "2026-01-15T10:23:45Z",
       "speed_kmh": 72.4,
       "battery_pct": 83.2,
@@ -149,7 +149,7 @@ GitHub Actions runs on every push:
 ## Project Structure
 
 ```
-vehicle-telemetry-pipeline/
+tesla-telemetry-pipeline/
 ├── producer/          # Kafka producer — vehicle sensor simulation
 │   ├── main.go
 │   └── Dockerfile

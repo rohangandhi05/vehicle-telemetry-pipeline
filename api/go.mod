@@ -1,4 +1,4 @@
-module github.com/yourname/vehicle-telemetry/api
+module github.com/yourname/tesla-telemetry/api
 
 go 1.22
 

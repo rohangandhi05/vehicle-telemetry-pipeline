@@ -1,4 +1,4 @@
-module github.com/yourname/vehicle-telemetry/producer
+module github.com/yourname/tesla-telemetry/producer
 
 go 1.22
 
