@@ -66,7 +66,6 @@ func prometheusMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		start := time.Now()
 		c.Next()
-		fmt.Println("c.FullPath()", c.FullPath())
 		duration := time.Since(start).Seconds()
 		status := http.StatusText(c.Writer.Status())
 		httpRequests.WithLabelValues(c.Request.Method, c.FullPath(), status).Inc()
