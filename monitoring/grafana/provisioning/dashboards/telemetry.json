@@ -74,19 +74,6 @@
           "legendFormat": "{{endpoint}}"
         }
       ]
-    },
-    {
-      "id": 6,
-      "title": "API p95 Latency",
-      "type": "timeseries",
-      "gridPos": { "x": 12, "y": 16, "w": 12, "h": 8 },
-      "targets": [
-        {
-          "datasource": "Prometheus",
-          "expr": "histogram_quantile(0.95, rate(api_request_duration_seconds_bucket[1m]))",
-          "legendFormat": "p95"
-        }
-      ]
     }
   ]
 }
