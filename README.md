@@ -123,12 +123,6 @@ kubectl get pods -n telemetry -w
 kubectl get svc telemetry-api-service -n telemetry
 ```
 
-The API deployment includes a Horizontal Pod Autoscaler that scales from 2–10 replicas at 70% CPU.
-
-## Monitoring
-
-After `docker compose up`, open Grafana at http://localhost:3000 (admin/admin).
-
 The **Vehicle Telemetry Dashboard** auto-provisions and includes:
 - Messages processed per second
 - Processing latency (p99)
@@ -136,41 +130,6 @@ The **Vehicle Telemetry Dashboard** auto-provisions and includes:
 - Per-vehicle battery percentage
 - API request rate and p95 latency
 
-## CI/CD
-
-GitHub Actions runs on every push:
-
-1. **Lint** — golangci-lint for all three services
-2. **Unit Tests** — `go test -race` with coverage upload to Codecov
-3. **Integration Tests** — spins up Kafka + Redis service containers
-4. **Build & Push** — builds Docker images and pushes to GitHub Container Registry
-5. **Deploy** — rolls out updated images to Kubernetes with rollout status checks
-
-## Project Structure
-
-```
-tesla-telemetry-pipeline/
-├── producer/          # Kafka producer — vehicle sensor simulation
-│   ├── main.go
-│   └── Dockerfile
-├── consumer/          # Kafka consumer — event processing + Redis writes
-│   ├── main.go
-│   └── Dockerfile
-├── api/               # REST API — Redis-backed vehicle status endpoints
-│   ├── main.go
-│   └── Dockerfile
-├── k8s/               # Kubernetes manifests
-│   ├── 00-namespace-config.yaml
-│   ├── 01-redis.yaml
-│   ├── 02-kafka.yaml
-│   └── 03-services.yaml
-├── monitoring/
-│   ├── prometheus.yml
-│   └── grafana/provisioning/
-├── .github/workflows/
-│   └── ci.yml
-└── docker-compose.yml
-```
 
 ## Key Design Decisions
 
